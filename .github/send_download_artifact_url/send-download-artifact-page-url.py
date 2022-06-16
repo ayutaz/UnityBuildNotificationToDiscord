@@ -5,8 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print(os.getenv("DISCORD_WEBHOOK_URL"))
-
 headers = {
     "Accept": "application/vnd.github.v3+json",
     "Authorization": os.getenv("PERSONAL_ACCESS_TOKEN"),
