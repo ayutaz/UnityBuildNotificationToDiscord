@@ -3,7 +3,7 @@ name: Build
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-  DISCORD_WEBHOOK_TASK_STATUS: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
 # Controls when the action will run. 
 on:
