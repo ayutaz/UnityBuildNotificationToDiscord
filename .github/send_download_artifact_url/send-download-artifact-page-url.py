@@ -10,7 +10,7 @@ headers = {
     "Authorization": os.getenv("PERSONAL_ACCESS_TOKEN"),
 }
 
-req = requests.get(" https://api.github.com/repos/ayutaz/UnityBuildNotificationToDiscord/actions/artifacts",
+req = requests.get(f" https://api.github.com/repos/{os.getenv('GITHUB_REPOSITORY')}/actions/artifacts",
                    headers=headers).json()
 
 
@@ -18,7 +18,7 @@ def get_download_url(content):
     for artifact in content["artifacts"]:
         if artifact["name"] == "Build-StandaloneWindows64":
             run_id = artifact["workflow_run"]["id"]
-            url = f"https://github.com/ayutaz/UnityBuildNotificationToDiscord/actions/runs/{run_id}"
+            url = f"https://github.com/{os.getenv('GITHUB_REPOSITORY')}/actions/runs/{run_id}"
             return url
     return None
 

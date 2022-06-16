@@ -58,5 +58,7 @@ jobs:
         run: |
           pip install -r .github/send_download_artifact_url/requirements.txt
       - name: send download artifact page url
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           python .github/send_download_artifact_url/send-download-artifact-page-url.py
